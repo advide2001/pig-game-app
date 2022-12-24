@@ -67,8 +67,8 @@ btnHoldElement.addEventListener('click', () => {
     scores[activePlayer] += currentScore;
     document.getElementById(`score--${activePlayer}`).textContent =
       scores[activePlayer];
-    // 2. Check if player's score is >= 100
-    if (scores[activePlayer] >= 25) {
+    // 2. Check if player's score is >= 25
+    if (scores[activePlayer] >= 5) {
       // Finish the game
       // console.log('Game over');
       document
@@ -78,6 +78,7 @@ btnHoldElement.addEventListener('click', () => {
         .querySelector(`.player--${activePlayer}`)
         .classList.remove('player--active');
       playing = false;
+      diceElement.classList.add('hidden');
     } else {
       // Switch to next player
       currentScore = 0;
