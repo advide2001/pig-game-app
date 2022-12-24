@@ -88,3 +88,30 @@ btnHoldElement.addEventListener('click', () => {
     }
   }
 });
+
+// Reset game functionality
+btnNewElement.addEventListener('click', () => {
+  // Reset scores to 0
+  score0Element.textContent = 0;
+  score1Element.textContent = 0;
+  // Reset current scores to 0
+  document.getElementById(`current--0`).textContent = 0;
+  document.getElementById(`current--1`).textContent = 0;
+  // Reset active player to 0
+  document.querySelector('.player--0').classList.add('player--active');
+  document.querySelector('.player--1').classList.remove('player--active');
+  // Remove winner class from both players
+  document.querySelector(`.player--0`).classList.remove('player--winner');
+  document.querySelector(`.player--1`).classList.remove('player--winner');
+  // Reset scores array to 0
+  scores[0] = 0;
+  scores[1] = 0;
+  // Reset current score to 0
+  currentScore = 0;
+  // Reset active player to 0
+  activePlayer = 0;
+  // Reset playing to true
+  playing = true;
+  // Reset dice to hidden
+  diceElement.classList.add('hidden');
+});
